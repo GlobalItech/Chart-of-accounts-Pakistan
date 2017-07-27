@@ -8,6 +8,11 @@
 ##############################################################################
 {
     'name': "Pakistan Chart of Accounts (Manufacturing)",
+    'description': "Pakistan Chart of Accounts",
+    'summary': """
+        Chart of Accounts to facilitate Financial Reporting as per IFRS and other applicable local standards, having Raw Material, WIP & Finished Goods Accounts for manufacturing concerns.
+        """,
+    
     'author': 'Itech Resources',
     'website': 'http://itechresources.net/',
     'category': 'Accounting &amp; Finance',

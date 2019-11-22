@@ -13,7 +13,7 @@
         Chart of Accounts to facilitate Financial Reporting as per IFRS and other applicable local standards, having Raw Material, WIP & Finished Goods Accounts for manufacturing concerns.
         """,
     
-    'author': 'Itech Resources',
+    'author': 'Itech Resources,Steigend IT Solutions',
     'website': 'http://itechresources.net/',
     'category': 'Accounting &amp; Finance',
     'version': '1.2.1',

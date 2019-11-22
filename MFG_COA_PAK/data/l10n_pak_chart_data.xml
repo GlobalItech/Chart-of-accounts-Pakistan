@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+
+    <data noupdate="1">
+    
+        <record model="account.account.type" id="data_account_type_view">
+            <field name="name">View Type</field>
+            <field name="type">view</field>
+            <field name="note">Used mainly for parent accounts</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        <record model="account.account.type" id="account_type_property_plant_and_equipment">
+            <field name="name">Property, Plant and Equipment</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        
+        <record model="account.account.type" id="account_type_intangibles">
+            <field name="name">Intangibles</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+         
+         <record model="account.account.type" id="account_type_trade_debts">
+            <field name="name">Trade Debts</field>
+            <field name="type">receivable</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        <record model="account.account.type" id="account_type_loans_and_advances">
+            <field name="name">Loans and Advances</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        <record model="account.account.type" id="account_type_trade_deposits_and_short_term_prepayments">
+            <field name="name">Trade Deposits and Short Term Prepayments</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        <record model="account.account.type" id="account_type_stock_in_trade">
+            <field name="name">Stock in Trade</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+               <record model="account.account.type" id="account_type_cash_and_bank_balances">
+            <field name="name">Cash and Bank Balances</field>
+            <field name="type">liquidity</field>
+            <field name="include_initial_balance" eval="True" />
+        </record>
+        <record model="account.account.type" id="account_type_equity">
+            <field name="name">Equity</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        <record model="account.account.type" id="account_type_current_year_earnings">
+            <field name="name">Current Year Earnings</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+         
+         <record model="account.account.type" id="account_type_long_term_financing">
+            <field name="name">Long Term Financing</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+       
+        <record model="account.account.type" id="account_type_trade_payables">
+            <field name="name">Trade Payables</field>
+            <field name="type">payable</field>
+            <field name="include_initial_balance" eval="True" />
+        </record>
+        <record model="account.account.type" id="account_type_trade_other_payables">
+            <field name="name">Other payable</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        
+        <record model="account.account.type" id="account_type_short_term_borrowings">
+            <field name="name">Short Term Borrowings</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        <record model="account.account.type" id="account_type_sales">
+            <field name="name">sales</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        <record model="account.account.type" id="account_type_other_income">
+            <field name="name">Other Income</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+       
+        <record model="account.account.type" id="account_type_cost_of_sales">
+            <field name="name">Cost of Sales</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        
+        
+        <record model="account.account.type" id="account_type_administrative_expenses">
+            <field name="name">Administrative Expenses</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        
+        <record model="account.account.type" id="account_type_depreciation">
+            <field name="name">Depreciation</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        <record model="account.account.type" id="account_type_distribution_cost">
+            <field name="name">Distribution Cost</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        <record model="account.account.type" id="account_type_finance_cost">
+            <field name="name">Finance Cost</field>
+            <field name="type">other</field>
+            <field name="include_initial_balance" eval="False" />
+        </record>
+        
+        
+        
+        
+        
+        
+    
+
+         <!-- start don't remove this code -->
+        <!--end of type view -->>
+        <record id="transfer_account_id" model="account.account.template">
+            <field name="name">Liquidity Transfers</field>
+            <field name="code">103004</field>
+            <field name="reconcile" eval="True"/>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+        </record>
+
+       
+        <record id="pakistan_chart_template_standard" model="account.chart.template">
+            <field name="name">Pakistan Chart Of Account, Service</field>
+            <field name="code_digits">6</field>
+            <field name="bank_account_code_prefix">1126002</field>
+            <field name="cash_account_code_prefix">1126001</field>
+            <field name="currency_id" ref="base.PKR"/>
+            <field name="transfer_account_id" ref="transfer_account_id"/>
+        </record>
+
+        <record id="transfer_account_id" model="account.account.template">
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <!-- end point-->
+        
+        <!--start of parent account -->
+        
+        
+        
+        
+        
+         <record model="account.account.template" id="account_1000000">
+            <field name="name">Assets parent</field>
+            <field name="code">1000000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record> 
+        <record model="account.account.template" id="account_1110000">
+            <field name="parent_id" ref="account_1000000"/>
+            <field name="name">Non Current Assets</field>
+            <field name="code">1110000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_1111000">
+            <field name="parent_id" ref="account_1110000"/> 
+            <field name="name">Property Plant and Equipment</field>
+            <field name="code">1111000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_1111001">
+            <field name="parent_id" ref="account_1111000"/> 
+            <field name="name">Building</field>
+            <field name="code">1111001</field>
+            <field name="user_type_id" ref="account_type_property_plant_and_equipment"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1111002">
+            <field name="parent_id" ref="account_1111000"/> 
+            <field name="name">Furniture and Fixture</field>
+            <field name="code">1111002</field>
+            <field name="user_type_id" ref="account_type_property_plant_and_equipment"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1111003">
+            <field name="parent_id" ref="account_1111000"/> 
+            <field name="name">Tools and Equipment</field>
+            <field name="code">1111003</field>
+            <field name="user_type_id" ref="account_type_property_plant_and_equipment"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1111004">
+            <field name="parent_id" ref="account_1111000"/> 
+            <field name="name">Plant and Machinery</field>
+            <field name="code">1111004</field>
+            <field name="user_type_id" ref="account_type_property_plant_and_equipment"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1112000">
+            <field name="parent_id" ref="account_1110000"/> 
+            <field name="name">Intangible assets</field>
+            <field name="code">1112000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1112001">
+            <field name="parent_id" ref="account_1112000"/> 
+            <field name="name">ERP System</field>
+            <field name="code">1112001</field>
+            <field name="user_type_id" ref="account_type_intangibles"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1113000">
+            <field name="parent_id" ref="account_1110000"/> 
+            <field name="name">Investment property</field>
+            <field name="code">1113000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1114000">
+            <field name="parent_id" ref="account_1110000"/> 
+            <field name="name">Long term investments</field>
+            <field name="code">1114000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1115000">
+            <field name="parent_id" ref="account_1110000"/> 
+            <field name="name">Long term deposits</field>
+            <field name="code">1115000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1120000">
+            <field name="parent_id" ref="account_1000000"/> 
+            <field name="name">Current Assets</field>
+            <field name="code">1120000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1121000">
+            <field name="parent_id" ref="account_1120000"/> 
+            <field name="name">Trade Receivable</field>
+            <field name="code">1121000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1121001">
+            <field name="parent_id" ref="account_1121000"/> 
+            <field name="name">Receivable from Customers</field>
+            <field name="code">1121001</field>
+            <field name="user_type_id" ref="account_type_trade_debts"/>
+            <field name="reconcile" eval="True"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1122000">
+            <field name="parent_id" ref="account_1120000"/> 
+            <field name="name">Loans and Advances</field>
+            <field name="code">1122000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1122001">
+            <field name="parent_id" ref="account_1122000"/> 
+            <field name="name">Advances to Suppliers</field>
+            <field name="code">1122001</field>
+            <field name="user_type_id" ref="account_type_loans_and_advances"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1122002">
+            <field name="parent_id" ref="account_1122000"/> 
+            <field name="name">Withholding Tax- Advance</field>
+            <field name="code">1122002</field>
+            <field name="user_type_id" ref="account_type_loans_and_advances"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1122003">
+            <field name="parent_id" ref="account_1122000"/> 
+            <field name="name">Loan to Employees</field>
+            <field name="code">1122003</field>
+            <field name="user_type_id" ref="account_type_loans_and_advances"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1123000">
+            <field name="parent_id" ref="account_1120000"/> 
+            <field name="name">Trade deposits and short term prepayments</field>
+            <field name="code">1123000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1123001">
+            <field name="parent_id" ref="account_1123000"/> 
+            <field name="name">Security Deposits</field>
+            <field name="code">1123001</field>
+            <field name="user_type_id" ref="account_type_trade_deposits_and_short_term_prepayments"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1123002">
+            <field name="parent_id" ref="account_1123000"/> 
+            <field name="name">Prepaid Rent</field>
+            <field name="code">1123002</field>
+            <field name="user_type_id" ref="account_type_trade_deposits_and_short_term_prepayments"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1123003">
+            <field name="parent_id" ref="account_1123000"/> 
+            <field name="name">Income Tax Refundable</field>
+            <field name="code">1123003</field>
+            <field name="user_type_id" ref="account_type_trade_deposits_and_short_term_prepayments"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1123004">
+            <field name="parent_id" ref="account_1123000"/> 
+            <field name="name">Sales Tax Refundable</field>
+            <field name="code">1123004</field>
+            <field name="user_type_id" ref="account_type_trade_deposits_and_short_term_prepayments"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_1124000">
+            <field name="parent_id" ref="account_1120000"/> 
+            <field name="name">Other Current Assets</field>
+            <field name="code">1124000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1125000">
+            <field name="parent_id" ref="account_1120000"/> 
+            <field name="name">Stock in Trade</field>
+            <field name="code">1125000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        
+        <record model="account.account.template" id="account_1125001">
+            <field name="parent_id" ref="account_1125000"/> 
+            <field name="name">Stock in Hand</field>
+            <field name="code">1125001</field>
+            <field name="user_type_id" ref="account_type_stock_in_trade"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1125002">
+            <field name="parent_id" ref="account_1125000"/> 
+            <field name="name">Work in Process</field>
+            <field name="code">1125002</field>
+            <field name="user_type_id" ref="account_type_stock_in_trade"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1125003">
+            <field name="parent_id" ref="account_1125000"/> 
+            <field name="name">Finished Goods</field>
+            <field name="code">1125003</field>
+            <field name="user_type_id" ref="account_type_stock_in_trade"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        
+        <record model="account.account.template" id="account_1126000">
+            <field name="parent_id" ref="account_1120000"/> 
+            <field name="name">Cash and Bank</field>
+            <field name="code">1126000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+		<!--
+        <record model="account.account.template" id="account_1126001">
+            <field name="parent_id" ref="account_1126000"/> 
+            <field name="name">Cash In Hand</field>
+            <field name="code">1126001</field>
+            <field name="user_type_id" ref="account_type_cash_and_bank_balances"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+		
+        <record model="account.account.template" id="account_1126002">
+            <field name="parent_id" ref="account_1126000"/> 
+            <field name="name">Bank</field>
+            <field name="code">1126002</field>
+            <field name="user_type_id" ref="account_type_cash_and_bank_balances"/>
+            <field name="reconcile" eval="True"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+		-->
+        <record model="account.account.template" id="account_1126003">
+            <field name="parent_id" ref="account_1126000"/> 
+            <field name="name">Inter-Banks Transfer</field>
+            <field name="code">1126003</field>
+            <field name="user_type_id" ref="account_type_cash_and_bank_balances"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_1126004">
+            <field name="parent_id" ref="account_1126000"/> 
+            <field name="name">Liquidity Transfer</field>
+            <field name="code">1126004</field>
+            <field name="user_type_id" ref="account_type_cash_and_bank_balances"/>
+            <field name="reconcile" eval="True"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        
+        <record model="account.account.template" id="account_2000000">
+            <field name="name">Equity and Liabilities</field>
+            <field name="code">2000000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_2100000">
+            <field name="parent_id" ref="account_2000000"/> 
+            <field name="name">Equity</field>
+            <field name="code">2100000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_2111001">
+            <field name="parent_id" ref="account_2100000"/> 
+            <field name="name">Share Capital</field>
+            <field name="code">2111001</field>
+            <field name="user_type_id" ref="account_type_equity"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_2111002">
+            <field name="parent_id" ref="account_2100000"/> 
+            <field name="name">Reserves</field>
+            <field name="code">2111002</field>
+            <field name="user_type_id" ref="account_type_equity"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_2111003">
+            <field name="parent_id" ref="account_2100000"/> 
+            <field name="name">Undistributed Profits/Losses</field>
+            <field name="code">2111003</field>
+            <field name="user_type_id" ref="account_type_current_year_earnings"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_2111004">
+            <field name="parent_id" ref="account_2100000"/> 
+            <field name="name">Drawings</field>
+            <field name="code">2111004</field>
+            <field name="user_type_id" ref="account_type_equity"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <record model="account.account.template" id="account_2200000">
+            <field name="parent_id" ref="account_2000000"/> 
+            <field name="name">Liabilities</field>
+            <field name="code">2200000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_2210000">
+            <field name="parent_id" ref="account_2200000"/> 
+            <field name="name">Non Current Liabilities</field>
+            <field name="code">2210000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_2211000">
+            <field name="parent_id" ref="account_2200000"/> 
+            <field name="name">Long Term Financing</field>
+            <field name="code">2211000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+         <record model="account.account.template" id="account_2211001">
+            <field name="parent_id" ref="account_2211000"/> 
+            <field name="name">Long term Loan</field>
+            <field name="code">2211001</field>
+            <field name="user_type_id" ref="account_type_long_term_financing"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_2211002">
+            <field name="parent_id" ref="account_2211000"/> 
+            <field name="name">Liabilities against assets subject to finance lease</field>
+            <field name="code">2211002</field>
+            <field name="user_type_id" ref="account_type_long_term_financing"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+         <record model="account.account.template" id="account_2212000">
+            <field name="parent_id" ref="account_2200000"/> 
+            <field name="name">Deferred liabilities</field>
+            <field name="code">2212000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_2220000">
+            <field name="parent_id" ref="account_2000000"/> 
+            <field name="name">Current Liabilities</field>
+            <field name="code">2220000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+         <record model="account.account.template" id="account_2221000">
+            <field name="parent_id" ref="account_2220000"/> 
+            <field name="name">Trade and Payables</field>
+            <field name="code">2221000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_2221001">
+            <field name="parent_id" ref="account_2221000"/> 
+            <field name="name">Payable to Suppliers</field>
+            <field name="code">2221001</field>
+            <field name="user_type_id" ref="account_type_trade_payables"/>
+            <field name="reconcile" eval="True"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+      
+     
+          <record model="account.account.template" id="account_2221002">
+            <field name="parent_id" ref="account_2221000"/> 
+            <field name="name">Accrued Expenses</field>
+            <field name="code">2221002</field>
+            <field name="user_type_id" ref="account_type_trade_other_payables"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+          <record model="account.account.template" id="account_2221003">
+            <field name="parent_id" ref="account_2221000"/> 
+            <field name="name">Salaries Payable</field>
+            <field name="code">2221003</field>
+            <field name="user_type_id" ref="account_type_trade_other_payables"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+          <record model="account.account.template" id="account_2221004">
+            <field name="parent_id" ref="account_2221000"/> 
+            <field name="name">Mark-up accrued</field>
+            <field name="code">2221004</field>
+            <field name="user_type_id" ref="account_type_trade_other_payables"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+          <record model="account.account.template" id="account_2221005">
+            <field name="parent_id" ref="account_2221000"/> 
+            <field name="name">Sales Tax Payable</field>
+            <field name="code">2221005</field>
+            <field name="user_type_id" ref="account_type_trade_other_payables"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+          <record model="account.account.template" id="account_2221006">
+            <field name="parent_id" ref="account_2221000"/> 
+            <field name="name">Withholding Tax Payable</field>
+            <field name="code">2221006</field>
+            <field name="user_type_id" ref="account_type_trade_other_payables"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+          <record model="account.account.template" id="account_2221007">
+            <field name="parent_id" ref="account_2221000"/> 
+            <field name="name">Other Payable</field>
+            <field name="code">2221007</field>
+            <field name="user_type_id" ref="account_type_trade_other_payables"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_2222000">
+            <field name="parent_id" ref="account_2000000"/> 
+            <field name="name">Short Term Borrowings</field>
+            <field name="code">2222000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+         <record model="account.account.template" id="account_2222001">
+            <field name="parent_id" ref="account_2222000"/> 
+            <field name="name">Current portion of long term liabilities</field>
+            <field name="code">2222001</field>
+            <field name="user_type_id" ref="account_type_short_term_borrowings"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record> 
+        
+        
+        
+        <!--parent-->
+        <record model="account.account.template" id="account_3000000">
+            
+            <field name="name">Revenue</field>
+            <field name="code">3000000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        <!--child-->
+        <record model="account.account.template" id="account_3111000">
+            <field name="parent_id" ref="account_3000000"/> 
+            <field name="name">Sales</field>
+            <field name="code">3111000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+            <!--child childrens-->
+            <record model="account.account.template" id="account_3111001">
+                <field name="parent_id" ref="account_3111000"/> 
+                <field name="name">Sales </field>
+                <field name="code">3111001</field>
+                <field name="user_type_id" ref="account_type_sales"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+        
+        <record model="account.account.template" id="account_3112000">
+            <field name="parent_id" ref="account_3000000"/> 
+            <field name="name">Other Income</field>
+            <field name="code">3112000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        
+        <!--child child-->
+    
+            <record model="account.account.template" id="account_3112001">
+                <field name="parent_id" ref="account_3112000"/> 
+                <field name="name">Bank Profit</field>
+                <field name="code">3112001</field>
+                <field name="user_type_id" ref="account_type_other_income"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record> 
+            
+            
+            <record model="account.account.template" id="account_3112002">
+                <field name="parent_id" ref="account_3112000"/> 
+                <field name="name">Employee Fine</field>
+                <field name="code">3112002</field>
+                <field name="user_type_id" ref="account_type_other_income"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+           
+            <record model="account.account.template" id="account_3112003">
+                <field name="parent_id" ref="account_3112000"/> 
+                <field name="name">Misc Income</field>
+                <field name="code">3112003</field>
+                <field name="user_type_id" ref="account_type_other_income"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>       
+    <!--parent-->    
+    <record model="account.account.template" id="account_4000000">
+        
+        <field name="name">Expenses</field>
+        <field name="code">4000000</field>
+        <field name="user_type_id" ref="data_account_type_view"/>
+        <field name="reconcile" eval="False"/>
+        <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+    </record>
+    
+        <!--parent-->    
+    <record model="account.account.template" id="account_4100000">
+        
+        <field name="name">Cost of Goods Sold</field>
+        <field name="code">4100000</field>
+        <field name="user_type_id" ref="data_account_type_view"/>
+        <field name="reconcile" eval="False"/>
+        <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+    </record>
+            <!--child child-->
+                <record model="account.account.template" id="account_4111001">
+                    <field name="parent_id" ref="account_4100000"/> 
+                    <field name="name">Purchases</field>
+                    <field name="code">4111001</field>
+                    <field name="user_type_id" ref="account_type_cost_of_sales"/>
+                    <field name="reconcile" eval="False"/>
+                    <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+                </record>
+        
+                <record model="account.account.template" id="account_4111002">
+                    <field name="parent_id" ref="account_4100000"/> 
+                    <field name="name">Carraige Inwads</field>
+                    <field name="code">4111002</field>
+                    <field name="user_type_id" ref="account_type_cost_of_sales"/>
+                    <field name="reconcile" eval="False"/>
+                    <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+                </record>
+                
+                <record model="account.account.template" id="account_4111003">
+                    <field name="parent_id" ref="account_4100000"/> 
+                    <field name="name">Raw Material Consumed</field>
+                    <field name="code">4111003</field>
+                    <field name="user_type_id" ref="account_type_cost_of_sales"/>
+                    <field name="reconcile" eval="False"/>
+                    <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+                </record>
+                
+                <record model="account.account.template" id="account_4111004">
+                    <field name="parent_id" ref="account_4100000"/> 
+                    <field name="name">Factory Salaries and Wages</field>
+                    <field name="code">4111004</field>
+                    <field name="user_type_id" ref="account_type_cost_of_sales"/>
+                    <field name="reconcile" eval="False"/>
+                    <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+                </record>
+                
+                <record model="account.account.template" id="account_4111005">
+                    <field name="parent_id" ref="account_4100000"/> 
+                    <field name="name">Contract Wages</field>
+                    <field name="code">4111005</field>
+                    <field name="user_type_id" ref="account_type_cost_of_sales"/>
+                    <field name="reconcile" eval="False"/>
+                    <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+                </record>
+                
+                <record model="account.account.template" id="account_4111006">
+                    <field name="parent_id" ref="account_4100000"/> 
+                    <field name="name">WIP Adjustment</field>
+                    <field name="code">4111006</field>
+                    <field name="user_type_id" ref="account_type_cost_of_sales"/>
+                    <field name="reconcile" eval="False"/>
+                    <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+                </record>
+                
+                <record model="account.account.template" id="account_4111007">
+                    <field name="parent_id" ref="account_4100000"/> 
+                    <field name="name">Finished Goods Adjustment</field>
+                    <field name="code">4111007</field>
+                    <field name="user_type_id" ref="account_type_cost_of_sales"/>
+                    <field name="reconcile" eval="False"/>
+                    <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+                </record>
+        
+        <record model="account.account.template" id="account_4200000">
+            <field name="parent_id" ref="account_4000000"/> 
+            <field name="name">General and Admin Expenses</field>
+            <field name="code">4200000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+             <!--child-->    
+            <record model="account.account.template" id="account_4210000">
+                <field name="parent_id" ref="account_4200000"/> 
+                <field name="name">Staff Cost</field>
+                <field name="code">4210000</field>
+                <field name="user_type_id" ref="data_account_type_view"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+                <!--child-->
+                <record model="account.account.template" id="account_4211001">
+                    <field name="parent_id" ref="account_4210000"/> 
+                    <field name="name">Salary and Wages</field>
+                    <field name="code">4211001</field>
+                    <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                    <field name="reconcile" eval="False"/>
+                    <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+                </record>
+                
+                <record model="account.account.template" id="account_4211002">
+                    <field name="parent_id" ref="account_4210000"/> 
+                    <field name="name">Other Staff Benefits</field>
+                    <field name="code">4211002</field>
+                    <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                    <field name="reconcile" eval="False"/>
+                    <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+                </record>
+        
+        <record model="account.account.template" id="account_4220000">
+            <field name="parent_id" ref="account_4000000"/> 
+            <field name="name">Other Operating and General Expenses</field>
+            <field name="code">4220000</field>
+            <field name="user_type_id" ref="data_account_type_view"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+            
+            <!--child-->
+            <record model="account.account.template" id="account_4221001">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Rent, rates and taxes</field>
+                <field name="code">4221001</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221002">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Traveling and conveyance</field>
+                <field name="code">4221002</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221003">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Vehicle running expenses</field>
+                <field name="code">4221003</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221004">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Telephone and Internet</field>
+                <field name="code">4221004</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221005">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Electricity Fitting</field>
+                <field name="code">4221005</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221006">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Printing and stationery</field>
+                <field name="code">4221006</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+
+            <record model="account.account.template" id="account_4221007">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Fee and subscription</field>
+                <field name="code">4221007</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221008">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Legal and professional charges</field>
+                <field name="code">4221008</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221009">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Office Consumables and Supplies</field>
+                <field name="code">4221009</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+
+            <record model="account.account.template" id="account_422101">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Entertainment Expenses</field>
+                <field name="code">422101</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221011">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Repair and maintenance</field>
+                <field name="code">4221011</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221012">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Postage Expenses</field>
+                <field name="code">4221012</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+
+            <record model="account.account.template" id="account_4221013">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Canteen Expenses</field>
+                <field name="code">4221013</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221014">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Bad debts written off</field>
+                <field name="code">4221014</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221015">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Charity and Donations</field>
+                <field name="code">4221015</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+
+            <record model="account.account.template" id="account_4221016">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Insurance</field>
+                <field name="code">4221016</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221017">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Misc Expenses</field>
+                <field name="code">4221017</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221018">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Auditors' remuneration</field>
+                <field name="code">4221018</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+
+            <record model="account.account.template" id="account_4221019">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Depreciation Expenses</field>
+                <field name="code">4221019</field>
+                <field name="user_type_id" ref="account_type_depreciation"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_422102">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Electricity Expenses</field>
+                <field name="code">422102</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+            <record model="account.account.template" id="account_4221021">
+                <field name="parent_id" ref="account_4220000"/> 
+                <field name="name">Suspense Account</field>
+                <field name="code">4221021</field>
+                <field name="user_type_id" ref="account_type_administrative_expenses"/>
+                <field name="reconcile" eval="False"/>
+                <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+            </record>
+            
+    <!--parent-->    
+    <record model="account.account.template" id="account_4300000">
+        
+        <field name="name">Selling and Distribution Expenses</field>
+        <field name="code">4300000</field>
+        <field name="user_type_id" ref="data_account_type_view"/>
+        <field name="reconcile" eval="False"/>
+        <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+    </record>
+    <!--child--> 
+        <record model="account.account.template" id="account_4311001">
+            <field name="parent_id" ref="account_4300000"/> 
+            <field name="name">Advertisement and Marketing</field>
+            <field name="code">4311001</field>
+            <field name="user_type_id" ref="account_type_distribution_cost"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_4311002">
+            <field name="parent_id" ref="account_4300000"/> 
+            <field name="name">Commission on Sales</field>
+            <field name="code">4311002</field>
+            <field name="user_type_id" ref="account_type_distribution_cost"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_4311003">
+            <field name="parent_id" ref="account_4300000"/> 
+            <field name="name">Freight outward</field>
+            <field name="code">4311003</field>
+            <field name="user_type_id" ref="account_type_distribution_cost"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+    
+        <record model="account.account.template" id="account_4311004">
+            <field name="parent_id" ref="account_4300000"/> 
+            <field name="name">Sample Expense</field>
+            <field name="code">4311004</field>
+            <field name="user_type_id" ref="account_type_distribution_cost"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+    
+    <!--parent-->
+    <record model="account.account.template" id="account_4400000">
+        
+        <field name="name">Banking and Finance Costs</field>
+        <field name="code">4400000</field>
+        <field name="user_type_id" ref="data_account_type_view"/>
+        <field name="reconcile" eval="False"/>
+        <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+    </record>
+         
+        <!--child-->    
+        <record model="account.account.template" id="account_4411001">
+            <field name="parent_id" ref="account_4400000"/> 
+            <field name="name">Bank Charges and Commission</field>
+            <field name="code">4411001</field>
+            <field name="user_type_id" ref="account_type_finance_cost"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        <record model="account.account.template" id="account_4411002">
+            <field name="parent_id" ref="account_4400000"/> 
+            <field name="name">Foreign Exchange Difference</field>
+            <field name="code">4411002</field>
+            <field name="user_type_id" ref="account_type_finance_cost"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        
+        
+        
+        
+        <!--parent-->
+    <record model="account.account.template" id="account_5000000">
+        
+        <field name="name">Banking and Finance Costs</field>
+        <field name="code">5000000</field>
+        <field name="user_type_id" ref="data_account_type_view"/>
+        <field name="reconcile" eval="False"/>
+        <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+    </record>
+         
+        <!--child-->    
+        <record model="account.account.template" id="account_5100000">
+            <field name="parent_id" ref="account_5000000"/> 
+            <field name="name">Bank Commission</field>
+            <field name="code">5100000</field>
+            <field name="user_type_id" ref="account_type_finance_cost"/>
+            <field name="reconcile" eval="False"/>
+            <field name="chart_template_id" ref="pakistan_chart_template_standard"/>
+        </record>
+        
+        
+        
+        
+        
+        
+        
+        <record id="pakistan_chart_template_standard" model="account.chart.template">
+            <field name="property_account_receivable_id" ref="account_1121001"/>
+            <field name="property_account_payable_id" ref="account_2221001"/>
+            <field name="property_account_income_categ_id" ref="account_3111001"/>
+            <field name="property_account_expense_categ_id" ref="account_4221017"/>
+            <field name="income_currency_exchange_account_id" ref="account_4411002"/>
+            <field name="expense_currency_exchange_account_id" ref="account_4411002"/>
+        </record>
+
+    </data>
+</odoo>

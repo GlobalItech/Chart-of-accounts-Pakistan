@@ -16,7 +16,7 @@
     'author': 'Itech Resources,Steigend IT Solutions',
     'website': 'http://itechresources.net/',
     'category': 'Accounting &amp; Finance',
-    'version': '10.2.1',
+    'version': '1.2.1',
     'depends': ['base', 'account'],
     'data': [
         'security/account_parent_security.xml',
